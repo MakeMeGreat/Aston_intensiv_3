@@ -1,23 +1,30 @@
 package com.example.aston_intensiv_3.recycler
 
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
+import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.aston_intensiv_3.data.Contact
 import com.example.aston_intensiv_3.databinding.FragmentContactItemBinding
 
 class ContactAdapter(
-    private val onContactClicked: (Contact) -> Unit
+    private val onContactClicked: (Contact) -> Unit,
 ) : ListAdapter<Contact, ContactAdapter.ContactViewHolder>(ContactDiffUtil) {
 
-    class ContactViewHolder(val binding : FragmentContactItemBinding) : ViewHolder(binding.root) {
+
+
+    class ContactViewHolder(private val binding : FragmentContactItemBinding) : ViewHolder(binding.root) {
+
         fun bind(contact: Contact) {
             binding.contactName.text = contact.name
             binding.contactLastName.text = contact.lastName
             binding.contactNumber.text = contact.number
         }
+
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
@@ -38,11 +45,11 @@ class ContactAdapter(
 
     companion object ContactDiffUtil :  DiffUtil.ItemCallback<Contact>() {
         override fun areItemsTheSame(oldItem: Contact, newItem: Contact): Boolean {
-            return oldItem == newItem
+            return oldItem.id == newItem.id
         }
 
         override fun areContentsTheSame(oldItem: Contact, newItem: Contact): Boolean {
-            return oldItem.id == newItem.id
+            return oldItem == newItem
         }
     }
 }

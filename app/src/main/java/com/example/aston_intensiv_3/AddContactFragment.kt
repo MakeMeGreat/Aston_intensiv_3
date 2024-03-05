@@ -20,7 +20,6 @@ class AddContactFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         val binding = FragmentAddContactBinding.inflate(inflater)
         binding.confirmButton.setOnClickListener{
             viewModel.addContact(
@@ -28,7 +27,6 @@ class AddContactFragment : Fragment() {
                 binding.addLastnameEditText.text.toString(),
                 binding.addNumberEditText.text.toString()
             )
-
             Toast.makeText(context, "contact added ${viewModel.contactsList.value?.size}", LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addContactFragment_to_contactListFragment)
         }

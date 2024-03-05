@@ -12,6 +12,7 @@
         android:layout_height="50dp"
         android:theme="@style/Widget.AppCompat.Toolbar"
         style="@style/Widget.AppCompat.Toolbar"
+        android:visibility="gone"
         android:background="@color/purple"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,10 +57,18 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="10dp"
         android:text="Delete selected"
-        android:textColor="@color/red"
+
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/cancelButton" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/delete_img"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
