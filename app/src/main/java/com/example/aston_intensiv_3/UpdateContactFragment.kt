@@ -21,7 +21,7 @@ class UpdateContactFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         val binding = FragmentUpdateContactBinding.inflate(inflater)
         val id = navigationArgs.contactId
         val currentContact = viewModel.contactsList.value?.find { it.id == id }

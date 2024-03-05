@@ -1,15 +1,9 @@
 package com.example.aston_intensiv_3.data
 
-import androidx.lifecycle.LiveData
 
-typealias ContactsListener = (contacts: List<Contact>) -> Unit
+class ContactsList {
 
-class ContactsList() {
-
-   private val listeners = mutableSetOf<ContactsListener>()
-
-
-     val contacts = mutableListOf<Contact>(
+    val contacts = mutableListOf(
         Contact(1, "Abraham", "Johnson", "1111"),
         Contact(2, "Adam", "Johnson", "1112"),
         Contact(3, "Bernard", "Johnson", "1113"),
@@ -31,20 +25,4 @@ class ContactsList() {
         Contact(19, "Eric", "Johnson", "1129"),
         Contact(20, "Gregory", "Johnson", "1130"),
     )
-    fun getContactList() = contacts
-
-   /*fun addListener(listener: ContactsListener) {
-      listeners.add(listener)
-      listener.invoke(contacts)
-   }
-
-   fun removeListener(listener: ContactsListener) {
-      listeners.remove(listener)
-   }
-
-   private fun notifyChanges() {
-      listeners.forEach { it.invoke(contacts) }
-      }
-      */
-
 }

@@ -1,7 +1,5 @@
 package com.example.aston_intensiv_3
 
-import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.aston_intensiv_3.data.Contact
