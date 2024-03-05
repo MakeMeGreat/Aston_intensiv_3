@@ -6,11 +6,8 @@ import com.example.aston_intensiv_3.data.ContactsList
 
 class ContactViewModel : ViewModel() {
 
-    var isDeleteMode: Boolean = false
-
+    private var isDeleteMode: Boolean = false
     var contactsList: MutableList<Contact> = ContactsList().contacts
-
-
     private var nextContactId = 101
 
     fun addContact(
@@ -22,12 +19,30 @@ class ContactViewModel : ViewModel() {
         contactsList.add(newContact)
     }
 
-    fun updateContact(id: Int, name: String, lastName: String, number: String) {
+    fun updateContact(id: Int, name: String, lastName: String, number: String, isDelete: Boolean) {
         val index = contactsList.indexOfFirst { it.id == id }
-        contactsList[index] = Contact(id, name, lastName, number)
+        contactsList[index] = Contact(id, name, lastName, number, isDelete)
     }
 
-    fun changeDeleteMode() {
-        isDeleteMode = !isDeleteMode
+    fun resetSelectedContacts() {
+        contactsList.forEach {
+            if (it.isDelete) it.isDelete = false
+        }
     }
+
+    fun deleteSelectedContacts() {
+        contactsList.removeAll {
+            it.isDelete
+        }
+    }
+
+    fun turnOnDeleteMode() {
+        isDeleteMode = true
+    }
+
+    fun turnOffDeleteMode() {
+        isDeleteMode = false
+    }
+
+    fun isDeleteMode() = isDeleteMode
 }

@@ -3,4 +3,15 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="delete_contacts">Delete contacts</string>
+    <string name="name_editText_hint">Write name here</string>
+    <string name="lastname_edittext_hint">Write lastname here</string>
+    <string name="number_edittext_hint">Write number here</string>
+    <string name="confirm_button_text">Confirm</string>
+    <string name="cancel_button_text">Cancel</string>
+    <string name="add_contact_button_text">Add new contact</string>
+    <string name="delete_button_text">Delete selected</string>
+    <string name="update_button_text">Update</string>
+    <string name="contacts_deleted">Selected contacts deleted</string>
+    <string name="contact_updated">Contact updated</string>
+    <string name="contact_added">Contact added</string>
 </resources>

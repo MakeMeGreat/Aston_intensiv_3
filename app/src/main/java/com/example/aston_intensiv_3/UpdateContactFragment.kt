@@ -1,12 +1,12 @@
 package com.example.aston_intensiv_3
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -15,7 +15,6 @@ import com.example.aston_intensiv_3.databinding.FragmentUpdateContactBinding
 class UpdateContactFragment : Fragment() {
 
     private val viewModel: ContactViewModel by activityViewModels()
-
     private val navigationArgs: UpdateContactFragmentArgs by navArgs()
 
     override fun onCreateView(
@@ -36,9 +35,10 @@ class UpdateContactFragment : Fragment() {
                 id,
                 binding.updateNameEditText.text.toString(),
                 binding.updateLastnameEditText.text.toString(),
-                binding.updateNumberEditText.text.toString()
-                )
-            Toast.makeText(context, "Contact updated", LENGTH_SHORT).show()
+                binding.updateNumberEditText.text.toString(),
+                currentContact!!.isDelete
+            )
+            Toast.makeText(context, R.string.contact_updated, LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_updateContactFragment_to_contactListFragment)
         }
 

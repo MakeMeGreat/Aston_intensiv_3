@@ -26,11 +26,7 @@ class AddContactFragment : Fragment() {
                 binding.addLastnameEditText.text.toString(),
                 binding.addNumberEditText.text.toString()
             )
-            Toast.makeText(
-                context,
-                "contact added ${viewModel.contactsList.size}",
-                LENGTH_SHORT
-            ).show()
+            Toast.makeText(context, R.string.contact_added, LENGTH_SHORT).show()
             findNavController().navigate(R.id.action_addContactFragment_to_contactListFragment)
         }
         binding.cancelButton.setOnClickListener {

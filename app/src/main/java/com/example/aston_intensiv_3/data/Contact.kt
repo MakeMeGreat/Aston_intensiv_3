@@ -4,5 +4,6 @@ data class Contact(
     val id: Int,
     var name: String,
     var lastName: String,
-    var number: String
+    var number: String,
+    var isDelete: Boolean = false
 )
