@@ -24,7 +24,7 @@ class UpdateContactFragment : Fragment() {
     ): View {
         val binding = FragmentUpdateContactBinding.inflate(inflater)
         val id = navigationArgs.contactId
-        val currentContact = viewModel.contactsList.value?.find { it.id == id }
+        val currentContact = viewModel.contactsList.find { it.id == id }
         binding.updateNameEditText.setText(currentContact?.name)
         binding.updateLastnameEditText.setText(currentContact?.lastName)
         binding.updateNumberEditText.setText(currentContact?.number)

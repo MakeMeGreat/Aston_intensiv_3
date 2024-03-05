@@ -12,6 +12,7 @@ class ContactAdapter(
     private val onContactClicked: (Contact) -> Unit,
 ) : ListAdapter<Contact, ContactAdapter.ContactViewHolder>(ContactDiffUtil) {
 
+
     class ContactViewHolder(private val binding: FragmentContactItemBinding) :
         ViewHolder(binding.root) {
 
@@ -20,8 +21,8 @@ class ContactAdapter(
             binding.contactLastName.text = contact.lastName
             binding.contactNumber.text = contact.number
         }
-
     }
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ContactViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)

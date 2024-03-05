@@ -28,7 +28,7 @@ class AddContactFragment : Fragment() {
             )
             Toast.makeText(
                 context,
-                "contact added ${viewModel.contactsList.value?.size}",
+                "contact added ${viewModel.contactsList.size}",
                 LENGTH_SHORT
             ).show()
             findNavController().navigate(R.id.action_addContactFragment_to_contactListFragment)

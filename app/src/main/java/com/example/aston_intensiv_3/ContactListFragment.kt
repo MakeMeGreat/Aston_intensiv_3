@@ -28,12 +28,11 @@ class ContactListFragment : Fragment() {
         }
 
         val contacts = viewModel.contactsList
-        adapter.submitList(contacts.value)
+        adapter.submitList(contacts)
         binding.recyclerView.adapter = adapter
         binding.addButton.setOnClickListener {
             findNavController().navigate(R.id.action_contactListFragment_to_addContactFragment2)
         }
-
         binding.fab.setOnClickListener {
             viewModel.changeDeleteMode()
             changeButtons()
